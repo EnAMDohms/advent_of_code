@@ -39,8 +39,6 @@ public class DayTwo {
             List<String> matches = Files.readAllLines(Paths.get(inputPath));
             for (String match : matches) {
                 int matchScore = results.get(match);
-                System.out.println("macth fix: " + match);
-                System.out.println("match score: " + matchScore);
                 score += matchScore;
             }
             System.out.println("Score: " + score);
