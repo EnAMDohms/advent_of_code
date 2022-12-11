@@ -18,22 +18,25 @@ public class DayTwo {
 
     public static void main(String[] args) {
 
+        String testPath = "resources/test.txt";
+        String inputPath = "resources/DayTwo.txt";
+
         HashMap<String, Integer> results = new HashMap<String, Integer>();
-        results.put("A X", DRAW + ROCK);
-        results.put("A Y", WIN + PAPER);
-        results.put("A Z", LOSE + SCISSOR);
+        results.put("A X", LOSE + SCISSOR);
+        results.put("A Y", DRAW + ROCK);
+        results.put("A Z", WIN + PAPER);
 
         results.put("B X", LOSE + ROCK);
         results.put("B Y", DRAW + PAPER);
         results.put("B Z", WIN + SCISSOR);
 
-        results.put("C X", WIN + ROCK);
-        results.put("C Y", LOSE + PAPER);
-        results.put("C Z", DRAW + SCISSOR);
+        results.put("C X", LOSE + PAPER);
+        results.put("C Y", DRAW + SCISSOR);
+        results.put("C Z", WIN + ROCK);
 
         try {
             int score = 0;
-            List<String> matches = Files.readAllLines(Paths.get("resources/DayTwo.txt"));
+            List<String> matches = Files.readAllLines(Paths.get(inputPath));
             for (String match : matches) {
                 int matchScore = results.get(match);
                 System.out.println("macth fix: " + match);
