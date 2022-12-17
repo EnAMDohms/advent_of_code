@@ -44,7 +44,7 @@ public class DaySeven {
     }
 
     private static int sumOfSmallSizeDirectories(Directory directory) {
-        List<Integer> directorySizes = new ArrayList();
+        List<Integer> directorySizes = new ArrayList<Integer>();
         populateDirctorySizeMap(directory, directorySizes);
 
         int sum = 0;
