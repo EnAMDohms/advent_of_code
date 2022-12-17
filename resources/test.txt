@@ -1,1 +1,23 @@
-mjqjpqmgbljsphdztnvjfqwrcgsmlb
+$ cd /
+ls
+dir jrcgrvp
+$ cd jrcgrvp
+$ ls
+dir ndmprm
+dir tvbrzjrq
+$ cd ndmprm
+$ ls
+dir jqrdvnbp
+dir mjqww
+$ cd jqrdvnbp
+$ ls
+$ cd ..
+$ cd mjqww
+$ ls
+dir mjqww
+$ cd mjqww
+$ ls
+$ cd ..
+$ cd ..
+$ cd ..
+$ cd tvbrzjrq
