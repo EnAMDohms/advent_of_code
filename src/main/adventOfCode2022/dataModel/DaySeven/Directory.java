@@ -10,6 +10,7 @@ public class Directory {
     private Directory parentDirectory;
     private HashMap<String, Integer> files = new HashMap<>();
     private String name = "";
+    private String path = "";
     private int size = 0;
 
     public Directory() {
@@ -17,11 +18,13 @@ public class Directory {
 
     public Directory(String name) {
         this.name = name;
+        this.path = name;
         parentDirectory = this;
     }
 
     public Directory(Directory parentDirectory, String name) {
         this.name = name;
+        this.path = parentDirectory.getPath().concat("\\").concat(name);
         this.parentDirectory = parentDirectory;
     }
 
@@ -56,6 +59,21 @@ public class Directory {
         }
     }
 
+    public void addSubdirectory(Directory parentDirectory, String directoryName) {
+        if (!hasSubdirectorty(directoryName)) {
+            subDirectories.add(new Directory(parentDirectory, directoryName));
+        }
+    }
+
+    public boolean hasSubdirectorty(String directoryName) {
+        for (Directory subDirectory : this.subDirectories) {
+            if (subDirectory.getName().equals(directoryName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public List<Directory> getSubDirectories() {
         return subDirectories;
     }
@@ -88,21 +106,12 @@ public class Directory {
         this.size = size;
     }
 
-    public void addSubdirectory(Directory parentDirectory, String directoryName) {
-
-        if (!hasSubdirectorty(directoryName)) {
-            subDirectories.add(new Directory(parentDirectory, directoryName));
-        }
-
+    public String getPath() {
+        return this.path;
     }
 
-    public boolean hasSubdirectorty(String directoryName) {
-        for (Directory subDirectory : this.subDirectories) {
-            if (subDirectory.getName().equals(directoryName)) {
-                return true;
-            }
-        }
-        return false;
+    public void setPath(String path) {
+        this.path = path;
     }
 
 }
